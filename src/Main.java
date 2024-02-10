@@ -37,23 +37,23 @@ public class Main {
 
 
         // Queue using linked list
-        Queue<Integer> queue = new Queue<>();
-
-        queue.enqueue(90);
-        queue.enqueue(190);
-        queue.enqueue(290);
-
-        System.out.println(queue);
-        System.out.println(queue.dequeue());
-
-        System.out.println("Peek: " + queue.peek());
-
-        queue.enqueue(390);
-        queue.enqueue(590);
-
-        System.out.println(queue.dequeue());
-
-        System.out.println("Size: " + queue.size());
-        System.out.println(queue);
+//        Queue<Integer> queue = new Queue<>();
+//
+//        queue.enqueue(90);
+//        queue.enqueue(190);
+//        queue.enqueue(290);
+//
+//        System.out.println(queue);
+//        System.out.println(queue.dequeue());
+//
+//        System.out.println("Peek: " + queue.peek());
+//
+//        queue.enqueue(390);
+//        queue.enqueue(590);
+//
+//        System.out.println(queue.dequeue());
+//
+//        System.out.println("Size: " + queue.size());
+//        System.out.println(queue);
     }
 }
