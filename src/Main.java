@@ -1,3 +1,4 @@
+import binaryTree.BinaryTree;
 import linkedList.LinkedList;
 import queue.Queue;
 import stack.Stack;
@@ -55,5 +56,17 @@ public class Main {
 //
 //        System.out.println("Size: " + queue.size());
 //        System.out.println(queue);
+
+
+        // Binary Tree
+        BinaryTree binaryTree = new BinaryTree();
+
+        BinaryTree.Node root = binaryTree.buildTree(new int[]{1, 2, -1, -1, 3, 4, -1, -1, 5, -1, -1});
+
+        binaryTree.preOrder(root);
+        System.out.println();
+        binaryTree.inOrder(root);
+        System.out.println();
+        binaryTree.postOrder(root);
     }
 }
