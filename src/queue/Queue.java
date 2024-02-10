@@ -8,7 +8,6 @@ public class Queue<T> {
     private int size;
     public static class Node<T> {
         T data;
-        Node<T> prev;
         Node<T> next;
 
         public Node(T data) {
@@ -22,7 +21,6 @@ public class Queue<T> {
 
     public void enqueue(T data) {
         Node<T> node = new Node<>(data);
-        size++;
 
         if (head == null) {
             head = tail = node;
@@ -30,7 +28,6 @@ public class Queue<T> {
         }
 
         tail.next = node;
-        node.prev = tail;
 
         tail = node;
         size++;
@@ -39,13 +36,8 @@ public class Queue<T> {
     public T dequeue() {
         if(size == 0) throw exception();
 
-        T data = tail.data;
-        tail = tail.prev;
-        if(tail != null) {
-            tail.next = null;
-        } else {
-            head = null;
-        }
+        T data = head.data;
+        head = head.next;
 
         size--;
 
@@ -55,7 +47,7 @@ public class Queue<T> {
     public T peek() {
         if(size < 1) throw new RuntimeException("Queue is empty!");
 
-        return tail.data;
+        return head.data;
     }
 
     public boolean isEmpty() {
