@@ -1,3 +1,4 @@
+import binaryTree.BinarySearchTree;
 import binaryTree.BinaryTree;
 import linkedList.LinkedList;
 import queue.Queue;
@@ -59,14 +60,30 @@ public class Main {
 
 
         // Binary Tree
-        BinaryTree binaryTree = new BinaryTree();
+//        BinaryTree binaryTree = new BinaryTree();
+//
+//        BinaryTree.Node root = binaryTree.buildTree(new int[]{1, 2, -1, -1, 3, 4, -1, -1, 5, -1, -1});
+//
+//        binaryTree.preOrder(root);
+//        System.out.println();
+//        binaryTree.inOrder(root);
+//        System.out.println();
+//        binaryTree.postOrder(root);
 
-        BinaryTree.Node root = binaryTree.buildTree(new int[]{1, 2, -1, -1, 3, 4, -1, -1, 5, -1, -1});
+        // Binary Search Tree
+        BinarySearchTree bst = new BinarySearchTree();
 
-        binaryTree.preOrder(root);
-        System.out.println();
-        binaryTree.inOrder(root);
-        System.out.println();
-        binaryTree.postOrder(root);
+        bst.insert(5);
+        bst.insert(3);
+        bst.insert(7);
+        bst.insert(1);
+        bst.insert(4);
+        bst.insert(6);
+        bst.insert(8);
+
+        BinarySearchTree.Node root = bst.root;
+
+        System.out.println(bst.search(10, root));   // false
+        System.out.println(bst.search(6, root));    // true
     }
 }
