@@ -73,17 +73,17 @@ public class Main {
         // Binary Search Tree
         BinarySearchTree bst = new BinarySearchTree();
 
-        bst.insert(5);
-        bst.insert(3);
-        bst.insert(7);
-        bst.insert(1);
-        bst.insert(4);
-        bst.insert(6);
-        bst.insert(8);
+        bst.insertR(5);
+        bst.insertR(3);
+        bst.insertR(7);
+        bst.insertR(1);
+        bst.insertR(4);
+        bst.insertR(6);
+        bst.insertR(8);
 
         BinarySearchTree.Node root = bst.root;
 
-        System.out.println(bst.search(10, root));   // false
-        System.out.println(bst.search(6, root));    // true
+        System.out.println(bst.searchR(root, 10));   // false
+        System.out.println(bst.searchR(root, 6));    // true
     }
 }

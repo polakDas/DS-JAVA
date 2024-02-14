@@ -2,6 +2,7 @@ package binaryTree;
 
 public class BinarySearchTree {
     public Node root;
+
     public static class Node {
         int data;
         Node right;
@@ -24,7 +25,7 @@ public class BinarySearchTree {
         Node temp = root;
         Node prev = null;
 
-        while(temp != null) {
+        while (temp != null) {
             prev = temp;
 
             if (node.data > temp.data) {
@@ -53,5 +54,27 @@ public class BinarySearchTree {
         }
 
         return false;
+    }
+
+    public void insertR(int data) {
+        root = insert(root, data);
+    }
+
+    // insert using recursion
+    private Node insert(Node root, int data) {
+        if (root == null) return new Node(data);
+
+        if (data < root.data) root.left = insert(root.left, data);
+        else if (data > root.data) root.right = insert(root.right, data);
+
+        return root;
+    }
+
+    public boolean searchR(Node node, int data) {
+        if (node == null) return false;
+        if (node.data == data) return true;
+
+        if (data > node.data) return searchR(node.right, data);
+        else return searchR(node.left, data);
     }
 }
